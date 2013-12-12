@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="640" height="300" xmlns:Events="Events.*"
+		 creationComplete = "start()"
+>
+		
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[ 
+			import Sympoze.Controller;
+			
+			var controller:Controller = new Controller();
+			
+			public function start():void 
+			{
+				//LeftVideo.addChild(controller.m_vidChannel1);
+				//RightVideo.addChild(controller.m_vidChannel2);
+				
+				controller.m_myVideo = new Video();
+				controller.m_myVideo.attachCamera(controller.m_cam);
+				MyVideo.addChild(controller.m_myVideo);
+			}
+			
+		]]>
+	</fx:Script>
+	
+	
+	<s:VideoDisplay x="0" y="0" id="MyVideo"/>
+	
+	<s:HGroup width="532" height="165" horizontalCenter="0" verticalCenter="0">	
+		<s:VideoDisplay id="LeftVideo"/>
+		<s:VideoDisplay id="RightVideo"/>
+	</s:HGroup>
+	
+	<s:HGroup id="LeftRbtnGroup" x="54" y="241" width="258" height="30">	
+		<s:RadioButton id="rbtn_r1" groupName="LeftRbtnGroup" label="User1"/>
+		<s:RadioButton id="rbtn_r2" groupName="LeftRbtnGroup" label="User2"/>
+		<s:RadioButton id="rbtn_r3" groupName="LeftRbtnGroup" label="User3"/>
+		<s:RadioButton id="rbtn_r4" groupName="LeftRbtnGroup" label="User4"/>
+	</s:HGroup>
+	
+	<s:HGroup id="RightRbtnGroup" x="328" y="241" width="258" height="30">
+		<s:RadioButton id="rbtn_l1" groupName="RightRbtnGroup" label="User5"/>
+		<s:RadioButton id="rbtn_l2" groupName="RightRbtnGroup" label="User6"/>
+		<s:RadioButton id="rbtn_l3" groupName="RightRbtnGroup" label="User7"/>
+		<s:RadioButton id="rbtn_l4" groupName="RightRbtnGroup" label="User8"/>
+	</s:HGroup>
+			
+	
+			
+</s:Group>
